@@ -1,3 +1,5 @@
+![workflow status](https://github.com/Guddiny/test-helpers/actions/workflows/dotnet.yml/badge.svg?branch=main)
+
 # test-helpers
 Set of methods and classes to help work with tests
 
