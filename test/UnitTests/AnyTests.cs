@@ -23,9 +23,9 @@ public class AnyTests
     {
         var exclusions = new[] { "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         var rndString = Enumerable.Range(0, 100)
-            .Select(_ => Any.String(1).From(exclusions));
+            .Select(_ => Any.String(1).Except(exclusions));
 
-        exclusions.Should().NotBeSubsetOf(rndString);
+        rndString.Should().OnlyContain(i => !exclusions.Contains(i));
     }
 
     [Fact]
@@ -36,7 +36,7 @@ public class AnyTests
         var generatedStrings = Enumerable.Range(0, 100)
             .Select(_ => Any.String(1).From(source));
 
-        generatedStrings.Should().BeSubsetOf(source);
+        generatedStrings.Should().OnlyContain(i => source.Contains(i));
     }
 
     [Fact]
