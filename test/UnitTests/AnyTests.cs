@@ -58,7 +58,7 @@ public class AnyTests
     }
 
     [Fact]
-    public void Generate_random_int_only_from_provided_list()
+    public void Generate_int_from_provided_list()
     {
         var source = new[] { 1, 2, 3 };
         var rndIntegers = Enumerable.Range(0, 100)
